@@ -1,0 +1,45 @@
+{
+    "name": "project-analyzer",
+    "displayName": "Project Analyzer",
+    "description": "Analyzes project structure.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.analyzeProject",
+                "title": "Analyze Project"
+            }
+        ],
+        "statusBar": []
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p .",
+        "watch": "tsc -w .",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.3",
+        "@types/node": "^22.15.2",
+        "@types/vscode": "^1.85.0",
+        "@typescript-eslint/eslint-plugin": "^6.21.0",
+        "@typescript-eslint/parser": "^6.21.0",
+        "eslint": "^8.56.0",
+        "ignore": "^5.2.4",
+        "mocha": "^10.2.0",
+        "typescript": "^5.3.3",
+        "vscode-test": "^1.5.0"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.24.0"
+    }
+}
